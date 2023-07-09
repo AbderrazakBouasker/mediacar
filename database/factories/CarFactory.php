@@ -19,9 +19,15 @@ class CarFactory extends Factory
         return [
             'name'=>fake()->word(),
             'model'=>fake()->word(),
-            'serie'=>fake()->randomNumber(6),
+            'platenumber'=>fake()->randomNumber(6),
             'status'=>fake()->text(10),
             'description'=>fake()->text(20),
+            'fueltype'=>fake()->word(),
+            'gearbox'=>fake()->word(),
+            'numberofseats'=>fake()->randomDigit(),
+            'horsepower'=>fake()->randomNumber(2),
+            'availability'=>fake()->boolean(),
+
         ];
     }
 }

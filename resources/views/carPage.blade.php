@@ -1,0 +1,10 @@
+<div>
+    <h2>{{$car->name}}</h2>
+    <h3>{{$car->model}}</h3>
+    <h3>{{$car->platenumber}}</h3>
+    <h3>{{$car->status}}</h3>
+    <h3>{{$car->numberofseats}}</h3>
+    <h3>{{$car->fueltype}}</h3>
+    <h3>{{$car->gearbox}}</h3>
+    <p>{{$car->description}}</p>
+</div>

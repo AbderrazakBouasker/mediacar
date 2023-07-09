@@ -19,7 +19,13 @@ Route::get('/', function () {
 });
 
 Route::get('cars',function (){
-    return view('cars',[
+    return view('carsList',[
         'cars'=>car::all()
+    ]);
+});
+
+Route::get('cars/{car:platenumber}',function (car $car){
+    return view('carPage',[
+        'car'=>$car
     ]);
 });

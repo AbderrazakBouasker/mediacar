@@ -16,9 +16,14 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('model');
-            $table->string('serie');
+            $table->string('platenumber')->unique();
             $table->string('status');
+            $table->boolean('availability');
             $table->text('description')->nullable();
+            $table->string('gearbox');
+            $table->integer('numberofseats');
+            $table->string('fueltype');
+            $table->integer('horsepower');
         });
     }
 
