@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Models\Car;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('cars',function (){
     return view('carsList',[
@@ -29,3 +30,5 @@ Route::get('cars/{car:platenumber}',function (car $car){
         'car'=>$car
     ]);
 });
+
+Route::post('cars/{car:platenumber}/edit',[CarController::class,'edit']);

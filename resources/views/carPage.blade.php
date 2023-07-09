@@ -1,10 +1,17 @@
 <div>
-    <h2>{{$car->name}}</h2>
-    <h3>{{$car->model}}</h3>
-    <h3>{{$car->platenumber}}</h3>
-    <h3>{{$car->status}}</h3>
-    <h3>{{$car->numberofseats}}</h3>
-    <h3>{{$car->fueltype}}</h3>
-    <h3>{{$car->gearbox}}</h3>
-    <p>{{$car->description}}</p>
+    <form action="/cars/{{$car->platenumber}}/edit" method="post">
+        <input type="text" value="{{$car->name}}">
+        <input type="text" value="{{$car->model}}">
+        <input type="text" value="{{$car->platenumber}}">
+        <input type="text" value="{{$car->status}}>">
+        <input type="text" value="{{$car->availability}}">
+        <input type="text" value="{{$car->description}}">
+        <input type="text" value="{{$car->gearbox}}">
+        <input type="text" value="{{$car->numberofseats}}">
+        <input type="text" value="{{$car->fueltype}}">
+        <input type="text" value="{{$car->horsepower}}">
+        @csrf
+        <input type="submit">
+        <button>Delete</button>
+    </form>
 </div>
