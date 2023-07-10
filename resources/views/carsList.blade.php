@@ -1,3 +1,10 @@
+<div>
+    <form action="" method="get">
+        <input name="search" type="text" >
+        <label for="search" >search</label>
+    </form>
+</div>
+<a href="/cars/create">Add new car</a>
 @foreach($cars as $car)
     <div>
         <a href="cars/{{$car->platenumber}}">

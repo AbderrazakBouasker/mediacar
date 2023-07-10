@@ -19,16 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('cars',function (){
-    return view('carsList',[
-        'cars'=>car::all()
-    ]);
-});
+Route::get('cars',[CarController::class,'index']);
 
-Route::get('cars/{car:platenumber}',function (car $car){
-    return view('carPage',[
-        'car'=>$car
-    ]);
-});
+Route::get('cars/create',[CarController::class,'create']);
+
+Route::get('cars/{car:platenumber}',[CarController::class,'show']);
 
 Route::post('cars/{car:platenumber}/edit',[CarController::class,'edit']);
+
+

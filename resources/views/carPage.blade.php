@@ -12,6 +12,7 @@
         <input type="text" value="{{$car->horsepower}}">
         @csrf
         <input type="submit">
-        <button>Delete</button>
+        <input type="reset">
     </form>
+    <button>Delete</button>
 </div>

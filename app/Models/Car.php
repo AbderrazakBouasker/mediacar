@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     use HasFactory;
+
+    public function scopeFilter($query ,array $filters){
+        if ($filters['search'] ?? false){
+            $query
+                ->where('name','like','%' . request('search') . '%')
+                ->orWhere('platenumber','like','%' . request('search') . '%');
+        }
+    }
 }
