@@ -1,15 +1,39 @@
 <div>
-    <form action="/cars/create/submit" method="post">
-        <input type="text" placeholder="name">
-        <input type="text" placeholder="model">
-        <input type="text" placeholder="platenumber">
-        <input type="text" placeholder="status">
-        <input type="text" placeholder="availability">
-        <input type="text" placeholder="description">
-        <input type="text" placeholder="gearbox">
-        <input type="text" placeholder="number of seats">
-        <input type="text" placeholder="fueltype">
-        <input type="text" placeholder="horsepower">
+    <form action="/cars/create/store" method="post">
+        <input type="text" placeholder="name" name="name" value="{{old('name')}}" required>
+        @error('name')
+            <p>{{$message}}</p>
+        @enderror
+        <input type="text" placeholder="model" name="model" value="{{old('model')}}" required>
+        @error('model')
+        <p>{{$message}}</p>
+        @enderror
+        <input type="text" placeholder="platenumber" name="platenumber  value="{{old('platenumber')}}"" required>
+        @error('platenumber')
+        <p>{{$message}}</p>
+        @enderror
+{{--        <input type="text" placeholder="status" name="status">--}}
+{{--        <input type="text" placeholder="availability" name="availability">--}}
+        <input type="text" placeholder="description" name="description  value="{{old('description')}}"">
+        @error('description')
+        <p>{{$message}}</p>
+        @enderror
+        <input type="text" placeholder="gearbox" name="gearbox"  value="{{old('gearbox')}}" required>
+        @error('gearbox')
+        <p>{{$message}}</p>
+        @enderror
+        <input type="text" placeholder="numberofseats" name="numberofseats"  value="{{old('numberofseats')}}" required>
+        @error('numberofseats')
+        <p>{{$message}}</p>
+        @enderror
+        <input type="text" placeholder="fueltype" name="fueltype"  value="{{old('fueltype')}}" required>
+        @error('fueltype')
+        <p>{{$message}}</p>
+        @enderror
+        <input type="text" placeholder="horsepower" name="horsepower"  value="{{old('horsepower')}}" required>
+        @error('horsepower')
+        <p>{{$message}}</p>
+        @enderror
         @csrf
         <input type="submit">
         <input type="reset">

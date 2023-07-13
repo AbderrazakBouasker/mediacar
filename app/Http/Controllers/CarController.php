@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CarController extends Controller
 {
@@ -18,11 +19,38 @@ class CarController extends Controller
         ]);
     }
     public function edit(car $car){
-        $car->update();
+        $attributes= request()->validate([
+            'name'=>['required'],
+            'model'=>['required'],
+            'platenumber'=>['required',Rule::unique('cars','platenumber')],
+            'description'=>[],
+            'gearbox'=>['required'],
+            'numberofseats'=>['required','numeric','min:2','max:6'],
+            'fueltype'=>['required'],
+            'horsepower'=>['required','numeric'],
+        ]);
+        Car::update($attributes);
     }
     public function create(){
         return view('createCar');
     }
 
+    public function store(){
+        $attributes= request()->validate([
+            'name'=>['required'],
+            'model'=>['required'],
+            'platenumber'=>['required',Rule::unique('cars','platenumber')],
+            'description'=>[],
+            'gearbox'=>['required'],
+            'numberofseats'=>['required','numeric','min:2','max:6'],
+            'fueltype'=>['required'],
+            'horsepower'=>['required','numeric','min:1','max:1500'],
+        ]);
+        $attributes['status']='working';
+        $attributes['availability']='1';
+        Car::create($attributes);
+
+        return redirect('cars');
+    }
 }
 

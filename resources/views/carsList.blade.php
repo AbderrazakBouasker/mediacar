@@ -15,9 +15,10 @@
             Dropdown button
         </button>
         <ul class="dropdown-menu">
-{{--            @foreach()--}}
-{{--                <li><a class="dropdown-item" href="#">Action</a></li>--}}
-{{--            @endforeach--}}
+
+                <li><a class="dropdown-item" href="#">none</a></li>
+                <li><a class="dropdown-item" href="#">manuel</a></li>
+                <li><a class="dropdown-item" href="#">automatic</a></li>
 
         </ul>
     </div>

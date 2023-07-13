@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('status');
             $table->boolean('availability');
             $table->text('description')->nullable();
-            $table->string('gearbox');
+            $table->foreignId('gearbox');
             $table->integer('numberofseats');
             $table->string('fueltype');
             $table->integer('horsepower');

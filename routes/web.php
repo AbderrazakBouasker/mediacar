@@ -23,6 +23,8 @@ Route::get('cars',[CarController::class,'index']);
 
 Route::get('cars/create',[CarController::class,'create']);
 
+Route::post('cars/create/store',[CarController::class,'store']);
+
 Route::get('cars/{car:platenumber}',[CarController::class,'show']);
 
 Route::post('cars/{car:platenumber}/edit',[CarController::class,'edit']);
