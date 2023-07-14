@@ -33,5 +33,6 @@
         <h3>{{$car->platenumber}}</h3>
         <h3>{{$car->status}}</h3>
         <p>{{$car->description}}</p>
+        <img src="{{asset('storage/' . $car->picture)}}" alt="car picture">
     </div><br>
 @endforeach

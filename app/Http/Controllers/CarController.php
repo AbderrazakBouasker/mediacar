@@ -22,7 +22,7 @@ class CarController extends Controller
         $attributes= request()->validate([
             'name'=>['required'],
             'model'=>['required'],
-            'platenumber'=>['required',Rule::unique('cars','platenumber')],
+            'platenumber'=>['required'],
             'description'=>[],
             'gearbox'=>['required'],
             'numberofseats'=>['required','numeric','min:2','max:6'],
@@ -45,9 +45,11 @@ class CarController extends Controller
             'numberofseats'=>['required','numeric','min:2','max:6'],
             'fueltype'=>['required'],
             'horsepower'=>['required','numeric','min:1','max:1500'],
+            'picture'=>['required','image']
         ]);
         $attributes['status']='working';
         $attributes['availability']='1';
+        $attributes['picture']=request()->file('picture')->store('car-pictures');
         Car::create($attributes);
 
         return redirect('cars');

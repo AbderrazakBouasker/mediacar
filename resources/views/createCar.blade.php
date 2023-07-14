@@ -1,5 +1,5 @@
 <div>
-    <form action="/cars/create/store" method="post">
+    <form action="/cars/create/store" method="post" enctype="multipart/form-data">
         <input type="text" placeholder="name" name="name" value="{{old('name')}}" required>
         @error('name')
             <p>{{$message}}</p>
@@ -8,7 +8,7 @@
         @error('model')
         <p>{{$message}}</p>
         @enderror
-        <input type="text" placeholder="platenumber" name="platenumber  value="{{old('platenumber')}}"" required>
+        <input type="text" placeholder="platenumber" name="platenumber"  value="{{old('platenumber')}}" required>
         @error('platenumber')
         <p>{{$message}}</p>
         @enderror
@@ -32,6 +32,10 @@
         @enderror
         <input type="text" placeholder="horsepower" name="horsepower"  value="{{old('horsepower')}}" required>
         @error('horsepower')
+        <p>{{$message}}</p>
+        @enderror
+        <input type="file" name="picture" id="picture" required>
+        @error('picture')
         <p>{{$message}}</p>
         @enderror
         @csrf

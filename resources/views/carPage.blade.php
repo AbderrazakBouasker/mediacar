@@ -10,6 +10,7 @@
         <input type="text" value="{{$car->numberofseats}}">
         <input type="text" value="{{$car->fueltype}}">
         <input type="text" value="{{$car->horsepower}}">
+        <img src="{{asset('storage/' . $car->picture)}}" alt="car picture">
         @csrf
         <input type="submit">
         <input type="reset">

@@ -20,6 +20,7 @@ class Car extends Model
         'horsepower',
         'status',
         'availability',
+        'picture',
     ];
 
     public function scopeFilter($query ,array $filters){
