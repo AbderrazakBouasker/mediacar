@@ -18,18 +18,24 @@ class CarController extends Controller
             'car'=>$car
         ]);
     }
-    public function edit(car $car){
+    public function update(car $car){
         $attributes= request()->validate([
             'name'=>['required'],
             'model'=>['required'],
-            'platenumber'=>['required'],
+            'platenumber'=>['required',Rule::unique('cars','platenumber')->ignore($car->id)],
             'description'=>[],
             'gearbox'=>['required'],
             'numberofseats'=>['required','numeric','min:2','max:6'],
             'fueltype'=>['required'],
-            'horsepower'=>['required','numeric'],
+            'horsepower'=>['required','numeric','min:1','max:1500'],
+            'picture'=>['image'],
         ]);
-        Car::update($attributes);
+        if (isset($attributes['picture'])){
+            $attributes['picture']=request()->file('picture')->store('car-pictures');
+        }
+        $car->update($attributes);
+
+        return redirect('/cars');
     }
     public function create(){
         return view('createCar');
@@ -53,6 +59,12 @@ class CarController extends Controller
         Car::create($attributes);
 
         return redirect('cars');
+    }
+
+    public function destroy(Car $car){
+        $car->delete();
+
+        return redirect('/cars');
     }
 }
 

@@ -26,7 +26,7 @@
 <a href="/cars/create">Add new car</a>
 @foreach($cars as $car)
     <div>
-        <a href="cars/{{$car->platenumber}}">
+        <a href="/cars/{{$car->platenumber}}">
             <h2>{{$car->name}}</h2>
         </a>
         <h3>{{$car->model}}</h3>

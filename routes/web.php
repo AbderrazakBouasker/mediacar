@@ -27,6 +27,8 @@ Route::post('cars/create/store',[CarController::class,'store']);
 
 Route::get('cars/{car:platenumber}',[CarController::class,'show']);
 
-Route::post('cars/{car:platenumber}/edit',[CarController::class,'edit']);
+Route::patch('cars/{car:platenumber}',[CarController::class,'update']);
+
+Route::delete('cars/{car:platenumber}',[CarController::class,'destroy']);
 
 
