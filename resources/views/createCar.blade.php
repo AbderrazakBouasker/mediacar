@@ -34,6 +34,10 @@
         @error('horsepower')
         <p>{{$message}}</p>
         @enderror
+        <input type="text" placeholder="price" name="price"  value="{{old('price')}}" required>
+        @error('price')
+        <p>{{$message}}</p>
+        @enderror
         <input type="file" name="picture" id="picture" required>
         @error('picture')
         <p>{{$message}}</p>

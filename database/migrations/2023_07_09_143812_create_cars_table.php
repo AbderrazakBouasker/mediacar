@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('fueltype');
             $table->integer('horsepower');
             $table->string('picture')->nullable();
+            $table->integer('price');
         });
     }
 

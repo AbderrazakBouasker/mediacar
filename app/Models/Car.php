@@ -21,6 +21,7 @@ class Car extends Model
         'status',
         'availability',
         'picture',
+        'price',
     ];
 
     public function scopeFilter($query ,array $filters){
@@ -35,6 +36,10 @@ class Car extends Model
             )
             );
         }
+    }
+
+    public function Contract(){
+        return $this->hasMany(Contract::class);
     }
 
 

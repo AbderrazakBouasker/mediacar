@@ -27,6 +27,7 @@ class CarFactory extends Factory
             'numberofseats'=>fake()->randomDigit(),
             'horsepower'=>fake()->randomNumber(2),
             'availability'=>fake()->boolean(),
+            'price'=>fake()->randomNumber(2),
 
         ];
     }

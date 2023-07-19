@@ -5,7 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CarOptions extends Model
+class Contract extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+
+    ];
+
+    public function Car(){
+        return $this->belongsTo(Car::class);
+    }
 }
