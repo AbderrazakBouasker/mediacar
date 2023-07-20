@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ContractController;
 use App\Models\Car;
 use Illuminate\Support\Facades\Route;
 
@@ -30,5 +31,7 @@ Route::get('cars/{car:platenumber}',[CarController::class,'show']);
 Route::patch('cars/{car:platenumber}',[CarController::class,'update']);
 
 Route::delete('cars/{car:platenumber}',[CarController::class,'destroy']);
+
+Route::get('contract',[ContractController::class,'index']);
 
 

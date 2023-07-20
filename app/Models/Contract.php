@@ -13,6 +13,20 @@ class Contract extends Model
 
     ];
 
+    public function scopeFilter($query ,array $filters){
+        if ($filters['search'] ?? false){
+            $query
+                ->where('client_name','like','%' . request('search') . '%')
+                ->orWhere('client_cin','like','%' . request('search') . '%');
+
+            $query->when($filters['gearbox'] ?? false,fn($query, $gearbox)=>
+            $query->whereHas('gearbox',fn($query)=>
+            $query->where('type',$gearbox)
+            )
+            );
+        }
+    }
+
     public function Car(){
         return $this->belongsTo(Car::class);
     }
