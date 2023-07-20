@@ -34,4 +34,12 @@ Route::delete('cars/{car:platenumber}',[CarController::class,'destroy']);
 
 Route::get('contract',[ContractController::class,'index']);
 
+Route::get('contract/{contract:id}',[ContractController::class,'show']);
+
+Route::get('contract/create',[ContractController::class,'create']);
+
+Route::patch('contract/{contract:id}',[ContractController::class,'update']);
+
+Route::delete('contract/{contract:id}',[ContractController::class,'destroy']);
+
 
