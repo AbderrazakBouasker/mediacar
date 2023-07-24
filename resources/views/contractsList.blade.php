@@ -1,3 +1,5 @@
+<a href="/contract/create">create new contract</a>
+
 <div>
     <div>
         <form action="" method="get">

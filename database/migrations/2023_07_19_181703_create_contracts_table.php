@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('number_of_days');
             $table->float('price');
             $table->boolean('payment_status');
+            $table->text('file')->nullable();
         });
     }
 

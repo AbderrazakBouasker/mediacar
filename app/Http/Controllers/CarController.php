@@ -51,7 +51,8 @@ class CarController extends Controller
             'numberofseats'=>['required','numeric','min:2','max:6'],
             'fueltype'=>['required'],
             'horsepower'=>['required','numeric','min:1','max:1500'],
-            'picture'=>['required','image']
+            'picture'=>['required','image'],
+            'price'=>['required','numeric'],
         ]);
         $attributes['status']='working';
         $attributes['availability']='1';

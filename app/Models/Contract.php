@@ -10,7 +10,15 @@ class Contract extends Model
     use HasFactory;
 
     protected $fillable=[
-
+        'client_name',
+        'client_cin',
+        'rent_start_date',
+        'rent_end_date',
+        'car_id',
+        'number_of_days',
+        'price',
+        'payment_status',
+        'file',
     ];
 
     public function scopeFilter($query ,array $filters){

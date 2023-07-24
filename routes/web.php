@@ -43,7 +43,7 @@ Route::get('cars',[CarController::class,'index']);
 
 Route::get('cars/create',[CarController::class,'create']);
 
-Route::post('cars/create/store',[CarController::class,'store']);
+Route::post('cars/create',[CarController::class,'store']);
 
 Route::get('cars/{car:platenumber}',[CarController::class,'show']);
 
@@ -53,9 +53,11 @@ Route::delete('cars/{car:platenumber}',[CarController::class,'destroy']);
 
 Route::get('contract',[ContractController::class,'index']);
 
-Route::get('contract/{contract:id}',[ContractController::class,'show']);
-
 Route::get('contract/create',[ContractController::class,'create']);
+
+Route::post('contract/create',[ContractController::class,'store']);
+
+Route::get('contract/{contract:id}',[ContractController::class,'show']);
 
 Route::patch('contract/{contract:id}',[ContractController::class,'update']);
 

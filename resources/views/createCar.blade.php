@@ -1,5 +1,5 @@
 <div>
-    <form action="/cars/create/store" method="post" enctype="multipart/form-data">
+    <form action="/cars/create" method="post" enctype="multipart/form-data">
         <input type="text" placeholder="name" name="name" value="{{old('name')}}" required>
         @error('name')
             <p>{{$message}}</p>
