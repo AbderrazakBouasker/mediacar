@@ -18,7 +18,6 @@ class Contract extends Model
         'number_of_days',
         'price',
         'payment_status',
-        'file',
     ];
 
     public function scopeFilter($query ,array $filters){
