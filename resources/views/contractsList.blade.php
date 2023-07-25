@@ -10,7 +10,9 @@
 </div>
 <div>
     @foreach($Contracts as $contract)
-        <p>{{$contract->client_name}}</p>
+        <a href="/contract/{{$contract->id}}">
+            <p>{{$contract->client_name}}</p>
+        </a>
         <p>{{$contract->client_cin}}</p>
         <p>{{$contract->price}}</p>
         <p>{{$contract->car->platenumber}}</p>
